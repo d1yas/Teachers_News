@@ -34,7 +34,9 @@ INSTALLED_APPS = [
     'jazzmin',
     # 'material',
     # 'material.admin',
-    'drf_spectacular',    'django.contrib.admin',
+    'corsheaders'
+    'drf_spectacular',    
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -111,7 +113,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True  
+CORS_ALLOW_ALL_ORIGINS = True
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # React
+    "http://127.0.0.1:3000",
+    "http://localhost:5173",  # Vue
+    "http://127.0.0.1:5173",
+]
+
+
+CORS_ALLOW_CREDENTIALS = True  
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
